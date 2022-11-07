@@ -31,11 +31,17 @@ ngOnInit(): void {
      console.log(value)
   }
   )
+  this.signupForm.get('userData.email').statusChanges.subscribe((status) =>
+  {
+     console.log(status)
+  })
 }
+
 onSubmit()
 {
   console.log(this.signupForm)
 }
+
 onAddHoppy()
 {
   const control = new FormControl(null, Validators.required);
